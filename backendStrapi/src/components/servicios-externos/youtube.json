@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_secciones_video_youtubes",
+  "info": {
+    "displayName": "Video de YouTube",
+    "icon": "play",
+    "description": "Inserta un video de YouTube mediante URL con controles completos y sin límites de peso."
+  },
+  "options": {},
+  "attributes": {
+    "tituloSeccion": {
+      "type": "string",
+      "default": "Mira nuestro último metraje"
+    },
+    "youtubeUrl": {
+      "type": "string",
+      "required": true,
+      "default": "https://www.youtube.com/watch?v=BAAhEWbnOak"
+    },
+    "anchoCompleto": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

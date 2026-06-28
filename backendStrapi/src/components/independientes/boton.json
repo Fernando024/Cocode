@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_independientes_botons",
+  "info": {
+    "displayName": "boton",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "default": "/ejemplo"
+    },
+    "abrirNuevaPestana": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

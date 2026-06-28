@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_secciones_mapas",
+  "info": {
+    "displayName": "Maps Google",
+    "icon": "pin"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "default": "Nuestra Ubicación"
+    },
+    "mapUrl": {
+      "type": "text",
+      "required": true,
+      "default": "https://maps.app.goo.gl/Tc8LMY9imtVUvCPi7"
+    },
+    "anchoCompleto": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

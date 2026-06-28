@@ -1,0 +1,119 @@
+.section {
+  padding: 6rem 2rem;
+  background: var(--clr-black);
+}
+
+.inner {
+  max-width: min(800px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titulo {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.35rem 1rem;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  background: var(--clr-grey-dark);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 42, 109, 0.1);
+  overflow: hidden;
+  transition: border-color var(--transition-smooth);
+}
+
+.itemOpen {
+  border-color: rgba(255, 42, 109, 0.3);
+}
+
+.pregunta {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--clr-white);
+  text-align: left;
+  transition: color var(--transition-fast);
+}
+
+.pregunta:hover {
+  color: var(--clr-pink);
+}
+
+.chevron {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--clr-pink);
+  transition: transform var(--transition-smooth);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.respuesta {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-smooth);
+}
+
+.respuestaOpen {
+  grid-template-rows: 1fr;
+}
+
+.respuestaInner {
+  overflow: hidden;
+  padding: 0 1.5rem;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: var(--clr-white-grey);
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre-line;
+}
+
+.itemOpen .respuestaInner {
+  padding: 0 1.5rem 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .titulo {
+    margin-bottom: 2rem;
+  }
+
+  .pregunta {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .respuestaInner {
+    font-size: 0.9rem;
+  }
+
+  .itemOpen .respuestaInner {
+    padding: 0 1.25rem 1rem;
+  }
+}

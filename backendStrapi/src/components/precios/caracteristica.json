@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_componentes_caracteristica",
+  "info": {
+    "displayName": "Característica"
+  },
+  "attributes": {
+    "texto": {
+      "type": "string",
+      "required": true,
+      "maxLength": 150,
+      "default": "Ventaja del plan"
+    }
+  }
+}

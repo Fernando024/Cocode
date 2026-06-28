@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_bloque_inicio_cuerpos",
+  "info": {
+    "displayName": "cuerpo"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string",
+      "default": "Titulo de ejemplo"
+    },
+    "Subtitulo": {
+      "type": "string",
+      "default": "Subtitulo de ejemplo"
+    },
+    "Descripcion": {
+      "type": "text",
+      "default": "Este texto es un ejemplo diseñado exclusivamente para rellenar espacios en blanco evaluar el impacto visual de la tipografía, el interlineado y la estructura del diseño. Al leer estas líneas, notarás que este texto es un ejemplo sin un fin literario real. El objetivo principal es ver cómo fluyen los párrafos en la pantalla o en el papel. Mientras observas la distribución de las palabras, recuerda que este texto es un ejemplo y que será sustituido por el contenido definitivo una vez que el proyecto esté aprobado."
+
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "imagenDerecha": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

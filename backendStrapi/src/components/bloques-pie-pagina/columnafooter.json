@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_bloques-pie-pagina_columna_footers",
+  "info": {
+    "displayName": "Columna Footer",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "tituloColumna": {
+      "type": "string",
+      "default": "Productos",
+      "required": false
+    },
+    "enlaces": {
+      "type": "component",
+      "component": "independientes.link",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,584 @@
+.section {
+  padding: 9rem 2rem 5rem;
+  background: linear-gradient(
+    180deg,
+    #000 0%,
+    #050505 45%,
+    #090909 100%
+  );
+}
+
+.grid {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  border-radius: 24px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(35, 35, 35, 0.92) 0%,
+    rgba(16, 16, 16, 0.98) 100%
+  );
+
+  border: 1px solid rgba(255,255,255,.07);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+      0 8px 30px rgba(0,0,0,.45),
+      inset 0 1px 0 rgba(255,255,255,.08);
+
+  transition:
+      transform .3s ease,
+      border-color .3s ease;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        rgba(255,42,109,.12),
+        transparent 30%,
+        transparent 70%,
+        rgba(255,255,255,.04)
+    );
+    opacity:0;
+    transition:.45s;
+    pointer-events:none;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    padding:1px;
+
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    mask-composite:exclude;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    opacity:.35;
+    pointer-events:none;
+}
+
+@media (hover:hover){
+
+.card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(255,42,109,.25);
+    box-shadow: 0 8px 30px rgba(0,0,0,.45);
+}
+
+.card:hover::before{
+    opacity:.6;
+}
+
+.card:hover .image{
+    transform:scale(1.04);
+}
+
+}
+
+/* ===========================
+   BADGE
+=========================== */
+
+.starBadge{
+    position:absolute;
+    top:16px;
+    right:16px;
+    z-index:20;
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(20,20,20,.85);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.35);
+
+    color:var(--clr-pink);
+}
+
+.starBadge svg{
+    filter:
+        drop-shadow(0 0 10px rgba(255,42,109,.8));
+}
+
+.starTooltip{
+
+    position:absolute;
+
+    top:50%;
+    right:calc(100% + .8rem);
+
+    transform:translateY(-50%);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    background:#ff2a6d;
+
+    color:#fff;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    letter-spacing:.04em;
+
+    white-space:nowrap;
+
+    padding:.45rem .7rem;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 10px 20px rgba(255,42,109,.35);
+}
+
+.starBadge:hover .starTooltip{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.imageWrap{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+}
+
+.imageWrap::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.6),
+            transparent 45%
+        );
+
+    pointer-events:none;
+}
+
+.image{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+.body{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:1rem;
+
+    padding:2rem;
+
+    flex:1;
+
+    min-width:0;
+}
+
+/* ===========================
+   CATEGORY
+=========================== */
+
+.categoria{
+
+    width:fit-content;
+
+    padding:.45rem .9rem;
+
+    border-radius:999px;
+
+    background:
+        rgba(255,42,109,.10);
+
+    border:1px solid rgba(255,42,109,.25);
+
+    color:#ff5b90;
+
+    font-size:.73rem;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.titulo{
+
+    margin:0;
+
+    color:#fff;
+
+    font-family:var(--font-secondary);
+
+    font-size:1.6rem;
+
+    font-weight:800;
+
+    line-height:1.25;
+
+    letter-spacing:-.03em;
+
+    transition:color .3s;
+}
+
+.card:hover .titulo{
+    color:#ff2a6d;
+}
+
+/* ===========================
+   DESCRIPTION
+=========================== */
+
+.descripcion{
+
+    margin:0;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:.96rem;
+
+    font-weight:600;
+
+    line-height:1.7;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:3;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+}
+
+/* ===========================
+   DATE
+=========================== */
+
+.fecha{
+
+    margin-top:auto;
+
+    color:var(--clr-pink-light);
+
+    font-size:.85rem;
+
+    font-weight:500;
+
+    letter-spacing:.05em;
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+.botones a {
+  margin-inline: 0;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+  margin-top: auto;
+}
+
+.botones {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.iconos {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.iconoLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.iconoLink img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.caracteristicas {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+}
+
+.caracteristicaItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.caracteristicaItem img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (hover: hover) {
+  .iconoLink:hover {
+    background: rgba(255, 42, 109, 0.3);
+    transform: translateY(-1px);
+  }
+}
+
+
+/* ---- Media Queries ---- */
+
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+
+  .body {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 549px) {
+  .section {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .grid {
+    gap: 0.75rem;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+
+  .imageWrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .body {
+    padding: 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .titulo {
+    font-size: 0.85rem;
+  }
+
+  .descripcion {
+    font-size: 0.72rem;
+  }
+
+  .categoria {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .fecha {
+    font-size: 0.6rem;
+  }
+
+  .botones {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .acciones {
+    gap: 0.5rem;
+  }
+
+  .iconos {
+    justify-content: center;
+  }
+
+  .iconoLink {
+    width: 28px;
+    height: 28px;
+  }
+
+  .caracteristicaItem {
+    width: 26px;
+    height: 26px;
+  }
+
+  .starBadge {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .starBadge svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0.5rem 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .card {
+    max-width: 360px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .body {
+    padding: 0.6rem;
+    gap: 0.35rem;
+  }
+
+  .titulo {
+    font-size: 0.85rem;
+  }
+
+  .descripcion {
+    font-size: 0.7rem;
+  }
+
+  .categoria {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .fecha {
+    font-size: 0.6rem;
+  }
+
+  .botones {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .acciones {
+    gap: 0.5rem;
+  }
+
+  .iconos {
+    justify-content: center;
+  }
+
+  .iconoLink {
+    width: 26px;
+    height: 26px;
+  }
+
+  .caracteristicaItem {
+    width: 24px;
+    height: 24px;
+  }
+
+  .starBadge {
+    top: 0.25rem;
+    right: 0.25rem;
+  }
+
+  .starBadge svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+

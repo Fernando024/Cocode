@@ -1,0 +1,32 @@
+{"collectionName": "components_imagen_galeria",
+  "info": {
+    "displayName": "Imagen de galería",
+    "icon": "picture",
+    "description": "imagen y metadatos"
+  },
+  "options": {},
+  "attributes": {
+    "Imagen": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "required": true,
+      "multiple": false
+    },
+    "Titulo": {
+      "type": "string",
+      "required": false,
+      "default": "Carta galeria"
+    },
+    "Descripcion": {
+      "type": "text",
+      "maxLength": 250,
+      "required": false,
+      "default": "Descripcion de imagen de ejemplo"
+    },
+    "link": {
+      "type": "string",
+      "required": false,
+      "default": null
+    }
+  }
+}

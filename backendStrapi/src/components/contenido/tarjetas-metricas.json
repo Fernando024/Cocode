@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_bloque_inicio_tarjetas_metricas",
+  "info": {
+    "displayName": "tarjetasMetricas"
+  },
+  "options": {},
+  "attributes": {
+    "Metrica": {
+      "type": "string",
+      "default": "Metrica de ejemplo"
+    },
+    "descripcionMetrica": {
+      "type": "text",
+      "default": "Descripcion de metrica de ejemplo"
+    }
+  },
+  "config": {}
+}

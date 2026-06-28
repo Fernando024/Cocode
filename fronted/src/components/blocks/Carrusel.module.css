@@ -1,0 +1,221 @@
+/* ============================================
+   CARRUSEL CON TÍTULO CENTRADO (estilo consistente)
+   ============================================ */
+
+/* Contenedor externo que agrupa título y carrusel */
+.carrusel-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--clr-black);
+  padding: 2rem 1rem;
+}
+
+
+.sectionTitle {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.35rem 1rem;
+}
+
+/* ===== ESTILOS DEL CARRUSEL (ajustados) ===== */
+.carrusel {
+  position: relative;
+  width: 100%;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 0 1rem 2rem 1rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--clr-grey-dark);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  will-change: transform;
+}
+
+.slide,
+.slideLink {
+  flex: 0 0 100%;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.slideLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.slide:hover .image {
+  transform: scale(1.02);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 30%, rgba(0, 0, 0, 0.4) 70%, transparent);
+  padding: 2rem 1.5rem 1.5rem;
+  color: white;
+  text-align: left;
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.description {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+  max-width: 100%;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.arrowPrev {
+  left: 16px;
+}
+
+.arrowNext {
+  right: 16px;
+}
+
+.arrow:hover {
+  background: var(--clr-pink);
+  border-color: var(--clr-pink);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.dotActive {
+  width: 28px;
+  background: var(--clr-pink);
+  box-shadow: 0 0 6px var(--clr-pink);
+}
+
+.dot:hover {
+  background: var(--clr-pink);
+  transform: scale(1.2);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .carrusel-wrapper {
+    padding: 1rem 0;
+  }
+
+  .carrusel {
+    max-width: 100%;
+    padding: 0 0.5rem 1rem;
+  }
+  .container {
+    border-radius: 16px;
+  }
+  .slide {
+    aspect-ratio: 4 / 4;
+  }
+  .arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+  .arrowPrev { left: 8px; }
+  .arrowNext { right: 8px; }
+  .title { font-size: 1.2rem; }
+  .description { font-size: 0.8rem; max-width: 90%; }
+  .overlay { padding: 1rem; }
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrusel {
+    max-width: 100%;
+  }
+  .slide {
+    aspect-ratio: 4 / 4;
+    min-height: 260px;
+  }
+  .title { font-size: 1rem; }
+  .description { font-size: 0.7rem; }
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+}

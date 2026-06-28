@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_componentes_links",
+  "info": {
+    "displayName": "link",
+    "icon": "link",
+    "description": "Enlace reutilizable para menús"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "string",
+      "default": "Texto de ejemplo",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "default": "https://ejemplo.com",
+      "required": false
+    },
+    "abrirNuevaPestana": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.metricas {
+  padding: 6rem 2rem;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.tarjeta {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.numero {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+  color: var(--clr-pink);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.descripcion {
+  font-size: 1.125rem;
+  color: var(--clr-white-grey);
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}

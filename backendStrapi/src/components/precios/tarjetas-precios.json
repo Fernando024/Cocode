@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_precio_tarjetas",
+  "info": {
+    "displayName": "Tarjeta de Precio",
+    "description": "Tarjeta con un precio único y fijo"
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": false,
+      "maxLength": 80,
+      "default": "Título de ejemplo"
+    },
+    "subtitulo": {
+      "type": "string",
+      "required": false,
+      "maxLength": 120,
+      "default": "Subtítulo de ejemplo"
+    },
+    "descripcion": {
+      "type": "richtext",
+      "required": false,
+      "default": "Esta es una descripción de ejemplo para la tarjeta de precio."
+    },
+    "precio": {
+      "type": "decimal",
+      "required": false,
+      "default": 0.00
+    },
+    "moneda": {
+      "type": "string",
+      "default": "MXN",
+      "required": false,
+      "maxLength": 10
+    },
+    "nota_precio": {
+      "type": "string",
+      "required": false,
+      "maxLength": 60,
+      "default": "Nota sobre el precio (ej. IVA incluido)"
+    },
+    "insignia": {
+      "type": "string",
+      "required": false,
+      "maxLength": 50,
+      "default": "Oferta"
+    },
+    "logo": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "required": false
+    },
+    "caracteristicas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "precios.caracteristica",
+      "required": false,
+      "min": 1,
+      "max": 15
+    },
+    "boton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "independientes.boton"
+    }
+  }
+}

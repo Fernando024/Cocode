@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contenido_titulo_principals",
+  "info": {
+    "displayName": "Titulo Principal"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "default":"Titulo de ejemplo"
+    },
+    "descripcion": {
+      "type": "string",
+      "default":"Descripcion de ejemplo"
+    }
+  },
+  "config": {}
+}

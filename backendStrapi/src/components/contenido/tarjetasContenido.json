@@ -1,0 +1,52 @@
+{
+  "collectionName": "Tarjetas de Contenido",
+  "info": {
+    "displayName": "Tarjetas de Contenido",
+    "description": "Tarjetas para mostrar contenido"
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "default": "Titulo de ejemplo",
+      "required": false
+    },
+    "descripcion": {
+      "type": "text",
+      "default": "Descripcion de ejemplo",
+      "required": false
+    },
+    "imagen": {
+      "type": "media",
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categoria": {
+      "type": "string",
+      "default": "Categoria ejemplo"
+    },
+    "caracteristicas": {
+      "type": "component",
+      "component": "contenido.tarjeta-individual",
+      "repeatable": true
+    },
+    "boton": {
+      "type": "component",
+      "component": "independientes.boton",
+      "repeatable": true
+    },
+    "enlacesExternos": {
+      "type": "component",
+      "component": "servicios-externos.redes-sociales",
+      "repeatable": true
+    },
+    "fecha": {
+      "type": "date"
+    },
+    "destacado": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

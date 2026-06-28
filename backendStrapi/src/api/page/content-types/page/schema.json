@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "pagina"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Titulo"
+    },
+    "bloques": {
+      "type": "dynamiczone",
+      "components": [
+        "presentacion-pagina.seccion-principal",
+        "presentacion-pagina.heroeditorial",
+        "contenido.tarjetas-metricas",
+        "contenido.cuerpo",
+        "medios-visuales.galeria",
+        "medios-visuales.carrusel",
+        "servicios-externos.youtube",
+        "servicios-externos.mapa",
+        "contenido.tarjetas",
+        "contenido.tarjeta-individual",
+        "servicios-externos.correo",
+        "precios.tarjetas-precios",
+        "contenido.titulo-principal",
+        "contenido.preguntas-frecuentes",
+        "independientes.link",
+        "independientes.boton",
+        "contenido.tarjetascontenido"
+      ]
+    }
+  }
+}

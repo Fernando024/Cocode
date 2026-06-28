@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_carrusel_slides",
+  "info": {
+    "displayName": "Slide",
+    "icon": "picture",
+    "description":"Componente para diapositivas de carrusel"
+  },
+  "options": {},
+  "attributes": {
+      "Imagen": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "required": true,
+      "multiple": false
+    },
+    "Titulo": {
+      "type": "string",
+      "required": false,
+      "default": "Carta carrusel"
+    },
+    "Descripcion": {
+      "type": "text",
+      "maxLength": 200,
+      "required": false,
+      "default": "Descripcion de slide de ejemplo"
+    },
+    "link": {
+      "type": "string",
+      "required": false,
+      "default": "https://ejemplo.com"
+    }
+  }
+}

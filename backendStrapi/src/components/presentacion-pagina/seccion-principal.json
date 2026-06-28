@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_bloque_inicio_seccion_principals",
+  "info": {
+    "displayName": "seccionPrincipal"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string",
+      "default": "Titulo de ejemplo"
+    },
+    "Descripcion": {
+      "type": "text",
+      "default": "Descripcion de ejemplo para la seccion principal"
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

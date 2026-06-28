@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_contenido_tarjeta-individual",
+  "info": {
+    "displayName": "Tarjeta individual",
+    "icon": "microchip",
+    "description": "Tarjeta individual"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string",
+      "required": false,
+      "maxLength": 50
+    },
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos"]
+    }
+  }
+}

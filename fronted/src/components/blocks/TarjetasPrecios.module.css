@@ -1,0 +1,313 @@
+.section {
+  padding: 6rem 2rem;
+  background: var(--clr-black);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.card {
+  flex: 0 1 340px;
+  background: var(--clr-grey-dark);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 42, 109, 0.15);
+  position: relative;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--clr-pink);
+  box-shadow: var(--shadow-neon);
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logoWrap {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin-left: 0.25rem;
+}
+
+.logoWrap > * {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.logo {
+  object-fit: contain !important;
+}
+
+.insignia {
+  display: inline-block;
+  background: var(--gradient-pink);
+  color: var(--clr-white);
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.cardBody {
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-secondary);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: var(--clr-white);
+  margin: 0;
+}
+
+.subtitulo {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--clr-white-grey);
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.precioWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+
+.precio {
+  font-family: var(--font-secondary);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: var(--clr-white);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.moneda {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--clr-pink);
+  margin-left: 0.15rem;
+  vertical-align: super;
+}
+
+.notaPrecio {
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  color: var(--clr-white-grey);
+  opacity: 0.6;
+  width: 100%;
+}
+
+.descripcion {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: var(--clr-white-grey);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--clr-white-grey);
+  line-height: 1.4;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--clr-pink);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  border: none;
+  background: var(--gradient-pink);
+  color: var(--clr-white);
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
+  text-decoration: none;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-pink-dark);
+  transition: left var(--transition-smooth);
+  z-index: 0;
+}
+
+.cta:hover::before {
+  left: 0;
+}
+
+.cta:hover {
+  color: var(--clr-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon-hover);
+}
+
+.cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaArrow {
+  transition: transform var(--transition-fast);
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+
+@media (max-width: 767px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .card {
+    flex: 0 1 100%;
+  }
+
+  .cardBody {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0.75rem;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+
+  .card {
+    flex: 0 1 360px;
+  }
+
+  .cardBody {
+    padding: 1.25rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .subtitulo {
+    font-size: 0.8rem;
+  }
+
+  .precio {
+    font-size: 1.8rem;
+  }
+
+  .notaPrecio {
+    font-size: 0.7rem;
+  }
+
+  .descripcion {
+    font-size: 0.85rem;
+  }
+
+  .feature {
+    font-size: 0.8rem;
+    gap: 0.4rem;
+  }
+
+  .checkIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cta {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .insignia {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .logoWrap {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card {
+    flex: 0 1 320px;
+  }
+}

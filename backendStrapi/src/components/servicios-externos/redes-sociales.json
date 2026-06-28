@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_bloques-pie-pagina_redes_sociales",
+  "info": {
+    "displayName": "redesSociales"
+  },
+  "options": {},
+  "attributes": {
+    "icono": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "default": "https://ejemplo.com"
+    }
+  },
+  "config": {}
+}

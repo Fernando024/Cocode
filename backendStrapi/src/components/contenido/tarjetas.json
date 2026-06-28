@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_contenido_tarjetas",
+  "info": {
+    "displayName": "Tarjetas",
+    "icon": "gridOn",
+    "description": "Componente de tarjetas"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string",
+      "required": true,
+      "default": "Tecnologías y Herramientas"
+    },
+    "Tarjetas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contenido.tarjeta-individual",
+      "min": 1,
+      "max": 30
+    }
+  }
+}

@@ -1,0 +1,244 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0.75rem 5% 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.menuWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+}
+
+.logoWrapper {
+  display: inline-flex;
+  align-items: center;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.logoWrapper a {
+  display: flex;
+  
+}
+
+.logoWrapper img,
+.logoWrapper svg {
+  height: auto;
+  width: auto;
+  max-width: 250px;
+
+}
+
+.overlay {
+  display: none;
+}
+
+.toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  position: relative;
+  z-index: 1001;
+}
+
+.toggle span {
+  width: 25px;
+  height: 2px;
+  background: var(--clr-white);
+  margin: 4px 0;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.item {
+  display: inline-flex;
+}
+
+.link {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--clr-white);
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+  position: relative;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--clr-pink);
+  transition: width 0.2s ease;
+}
+
+.link:hover {
+  color: var(--clr-pink);
+}
+
+.link:hover::after,
+.link.active::after {
+  width: 100%;
+}
+
+.divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.socialList {
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.socialItem {
+  display: inline-flex;
+}
+
+.socialLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.socialLink img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.socialLink:hover {
+  background: var(--clr-pink);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 14px rgba(255, 105, 180, 0.4);
+}
+
+.socialLink:active {
+  transform: scale(0.92) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: relative;
+  }
+
+  .logoWrapper {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .logoWrapper a {
+    height: 100%;
+  }
+
+  .logoWrapper img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .toggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .overlayVisible {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+
+  .menuWrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--clr-black);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: left 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 5rem 1rem 3rem;
+  }
+
+  .menuWrapper.menuOpen { left: 0; }
+
+  .list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .link { font-size: 1.5rem; }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+  }
+
+  .socialList { gap: 1rem; }
+
+  .socialLink {
+    width: 44px;
+    height: 44px;
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_galerias",
+  "info": {
+    "displayName": "Galería",
+    "icon": "grid",
+    "description": "Galería de imágenes con diseño configurable"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string",
+      "required": false,
+      "default": "Este es un titulo de ejemplo"
+    },
+    "Descripcion": {
+      "type": "text",
+      "maxLength": 500,
+      "required": false,
+      "default": "Descripcion de galeria de ejemplo"
+    },
+    "Cartas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "medios-visuales.imagen-galeria",
+      "required": true,
+      "min": 1,
+      "max": 20
+    },
+    "Columnas": {
+      "type": "enumeration",
+      "enum": ["2", "3", "4"],
+      "default": "3",
+      "required": false
+    },
+    "MostrarTitulos": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "Efecto": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    }
+  }
+}

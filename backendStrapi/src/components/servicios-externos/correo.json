@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_formularios_contactos",
+  "info": {
+    "displayName": "Formulario Contacto",
+    "icon": "envelope",
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "default": "Contáctanos"
+    },
+    "nombre": {
+      "type": "string",
+      "default": "Tu nombre"
+    },
+    "correo": {
+      "type": "string",
+      "default": "tucorreo@ejemplo.com"
+    },
+    "telefono": {
+      "type": "string",
+      "default": "Tu teléfono"
+    },
+    "mensaje": {
+      "type": "string",
+      "default": "Escribe tu mensaje..."
+    },
+    "boton": {
+      "type": "string",
+      "default": "Enviar"
+    },
+    "correo_destino": {
+      "type": "email",
+      "required": true,
+      "default": "tucorreopersonal@gmail.com"
+    },
+    "mensaje_exito": {
+      "type": "text",
+      "default": "¡Mensaje enviado exitosamente! Me pondré en contacto contigo pronto."
+    }
+  }
+}

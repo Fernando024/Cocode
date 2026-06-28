@@ -1,0 +1,24 @@
+.enlace {
+  color: var(--clr-white);
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+  display: inline-block;
+}
+
+.enlace:hover {
+  color: var(--clr-pink);
+}
+
+@media (max-width: 480px) {
+  .enlace {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .enlace {
+    font-size: 0.85rem;
+  }
+}

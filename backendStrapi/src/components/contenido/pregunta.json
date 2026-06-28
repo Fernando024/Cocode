@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_contenido",
+  "info": {
+    "displayName": "Pregunta",
+    "description": "pregunta con título y descripción"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "descripcion": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

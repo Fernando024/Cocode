@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_secciones_hero_asimetricos",
+  "info": {
+    "displayName": "Hero Editorial Asimétrico",
+    "icon": "layout",
+    "description": "Hero premium con rejilla rota, texto flotante e imagen de gran escala descentrada."
+  },
+  "attributes": {
+    "tituloPrincipal": {
+      "type": "string",
+      "default": "Titulo principal de ejemplo",
+      "required": false
+    },
+    "conceptoClave": {
+      "type": "string",
+      "default": "CREATIVIDAD"
+    },
+    "parrafoDescriptivo": {
+      "type": "text",
+      "default": "No seguimos tendencias; diseñamos la ingeniería que las provoca. Una mirada cruda a nuestra obsesión por la perfección estructural."
+    },
+    "imagenProtagonista": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios"
+      ]
+    },
+    "boton": {
+      "type": "component",
+      "component": "independientes.boton",
+      "repeatable": false
+    }
+  }
+}

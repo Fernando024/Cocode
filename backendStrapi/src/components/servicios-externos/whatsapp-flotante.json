@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_config_whatsapp_flotantes",
+  "info": {
+    "displayName": "WhatsApp Flotante",
+    "icon": "message"
+  },
+  "options": {},
+  "attributes": {
+    "activo": {
+      "type": "boolean",
+      "default": true
+    },
+    "telefono": {
+      "type": "string",
+      "required": false
+    },
+    "mensajePredeterminado": {
+      "type": "string",
+      "default": "Hola, me gustaría conocer más información :)"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.toast {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-30px);
+  background: linear-gradient(135deg, #055826, #026d30);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 60px;
+  box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 255, 100, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.21, 1.11, 0.36, 1);
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  border: none;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Ícono de check personalizado */
+.toast::before {
+  content: "✓";
+  font-size: 1.3rem;
+  font-weight: 800;
+  background: white;
+  color: #0a612d;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(8, 146, 63, 0.6);
+  flex-shrink: 0;
+}
+
+/* Responsive para toast */
+@media (max-width: 640px) {
+  .toast {
+    width: calc(100% - 2rem);
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50px;
+  }
+  .toast::before {
+    width: 22px;
+    height: 22px;
+    font-size: 1.1rem;
+  }
+}
+
