@@ -1,3 +1,9 @@
-import Stripe from "stripe";
+let stripeInstance;
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+export function getStripe() {
+  if (!stripeInstance) {
+    const Stripe = require("stripe");
+    stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY);
+  }
+  return stripeInstance;
+}

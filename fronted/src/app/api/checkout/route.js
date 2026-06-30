@@ -1,4 +1,4 @@
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 
 export async function POST(request) {
   try {
@@ -28,7 +28,7 @@ export async function POST(request) {
     const nombreProducto = `${producto} — ${etiquetaPago}`;
     const montoCobrar = monto ?? precio;
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       mode: "payment",
       line_items: [
         {
