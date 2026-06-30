@@ -172,32 +172,34 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.85rem 2rem;
+  padding: 0.75rem 1.5rem;
   font-family: var(--font-primary);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem;
   border-radius: 999px;
   cursor: pointer;
   transition: all var(--transition-smooth);
-  border: none;
-  background: var(--gradient-pink);
-  color: var(--clr-white);
+  border: 2px solid var(--clr-pink);
+  background: transparent;
+  color: var(--clr-pink);
+  text-decoration: none;
   position: relative;
   overflow: hidden;
   margin-top: auto;
-  text-decoration: none;
+  align-self: center;
+  z-index: 1;
 }
 
 .cta::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--clr-pink-dark);
+  background: var(--gradient-pink);
   transition: left var(--transition-smooth);
-  z-index: 0;
+  z-index: -1;
 }
 
 .cta:hover::before {
@@ -223,6 +225,9 @@
   transform: translateX(4px);
 }
 
+.botonPrecios {
+  align-self: center;
+}
 
 @media (max-width: 767px) {
   .section {
@@ -310,4 +315,61 @@
   .card {
     flex: 0 1 320px;
   }
+}
+
+.botonStripe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  border: 2px solid var(--clr-pink);
+  background: transparent;
+  color: var(--clr-pink);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  align-self: center;
+  z-index: 1;
+}
+
+.botonStripe::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-pink);
+  transition: left var(--transition-smooth);
+  z-index: -1;
+}
+
+.botonStripe:hover::before {
+  left: 0;
+}
+
+.botonStripe:hover {
+  color: var(--clr-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon-hover);
+}
+
+.botonStripe > * {
+  position: relative;
+  z-index: 1;
+}
+
+.stripeArrow {
+  transition: transform var(--transition-fast);
+}
+
+.botonStripe:hover .stripeArrow {
+  transform: translateX(4px);
 }

@@ -70,30 +70,53 @@
   justify-content: center;
   gap: 0.5rem;
   margin-top: 24rem;
-  background: var(--clr-pink);
-  color: var(--clr-white);
   padding: 0.7rem 1.75rem;
-  border-radius: 999px;
+  font-family: var(--font-primary);
   font-weight: 700;
   font-size: 0.95rem;
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background var(--transition-fast);
+  border-radius: 999px;
   cursor: pointer;
-  border: none;
+  transition: all var(--transition-smooth);
+  border: 2px solid var(--clr-pink);
+  background: transparent;
+  color: var(--clr-pink);
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   white-space: nowrap;
   line-height: 1.4;
 }
 
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-pink);
+  transition: left var(--transition-smooth);
+  z-index: -1;
+}
+
+.cta:hover::before {
+  left: 0;
+}
+
 .cta:hover {
-  transform: translateY(-2px);
   color: var(--clr-white);
-  box-shadow: 0 8px 25px rgba(255, 42, 109, 0.35);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon-hover);
+}
+
+.cta > * {
+  position: relative;
+  z-index: 1;
 }
 
 .cta:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(255, 42, 109, 0.25);
-  background: var(--clr-pink-dark);
 }
 
 .cta:focus-visible {

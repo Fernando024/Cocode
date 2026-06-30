@@ -90,29 +90,29 @@
   width: 100%;
   padding: 1rem;
   margin-top: 1rem;
-  background: linear-gradient(135deg, var(--clr-pink), #b81b5e);
-  border: none;
-  border-radius: 40px;
   font-family: var(--font-primary);
   font-weight: 700;
   font-size: 1.1rem;
-  color: white;
+  border-radius: 999px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all var(--transition-smooth);
+  border: 2px solid var(--clr-pink);
+  background: transparent;
+  color: var(--clr-pink);
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
 .button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #ff4d8a, var(--clr-pink-dark));
-  transition: left 0.3s ease;
+  background: var(--gradient-pink);
+  transition: left var(--transition-smooth);
   z-index: -1;
 }
 
@@ -121,8 +121,14 @@
 }
 
 .button:hover {
+  color: var(--clr-white);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px -8px rgba(255, 42, 109, 0.6);
+  box-shadow: var(--shadow-neon-hover);
+}
+
+.button > * {
+  position: relative;
+  z-index: 1;
 }
 
 .button.loading {
@@ -131,7 +137,7 @@
 }
 
 .button.loading::after {
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   border: 2px solid rgba(255,255,255,0.3);

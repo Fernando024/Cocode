@@ -1,0 +1,147 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top center, rgba(40, 40, 40, 0.4) 0%, var(--clr-black) 80%);
+  padding: 2rem 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.iconWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(0, 230, 118, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  color: #00e676;
+}
+
+.titulo {
+  font-family: var(--font-secondary);
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--clr-white);
+}
+
+.desc {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--clr-white-grey);
+  line-height: 1.6;
+  opacity: 0.75;
+  max-width: 380px;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  border: 2px solid var(--clr-pink);
+  background: transparent;
+  color: var(--clr-pink);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 0.5rem;
+}
+
+.boton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-pink);
+  transition: left var(--transition-smooth);
+  z-index: -1;
+}
+
+.boton:hover::before {
+  left: 0;
+}
+
+.boton:hover {
+  color: var(--clr-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon-hover);
+}
+
+.boton > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .iconWrap {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 320px) {
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+
+  .boton {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

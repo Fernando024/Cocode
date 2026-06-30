@@ -1,5 +1,7 @@
+import Link from "next/link";
 import StrapiImage from "@/components/media/StrapiImage";
 import Boton from "@/components/blocks/independientes/Boton";
+import { getStrapiMedia } from "@/lib/getStrapiMedia";
 import styles from "./TarjetasPrecios.module.css";
 
 function Tarjeta({ data }) {
@@ -16,6 +18,25 @@ function Tarjeta({ data }) {
     caracteristicas,
     boton,
   } = data;
+
+  const logoUrl = logo ? getStrapiMedia(logo) : "";
+  const descripcionTexto = descripcion
+    ? descripcion.replace(/<[^>]+>/g, "").trim()
+    : "";
+  const params = new URLSearchParams({
+    producto: titulo || "Producto",
+    precio: String(precio ?? 0),
+    moneda: moneda || "MXN",
+    logoUrl: logoUrl || "",
+    descripcion: descripcionTexto,
+    insignia: insignia || "",
+    notaPrecio: nota_precio || "",
+    subtitulo: subtitulo || "",
+    caracteristicas: Array.isArray(caracteristicas) && caracteristicas.length > 0
+      ? JSON.stringify(caracteristicas.map(f => f.texto))
+      : "",
+  });
+  const compraUrl = `/compra?${params}`;
 
   return (
     <article className={`${styles.card}${insignia ? ` ${styles.hasInsignia}` : ""}`}>
@@ -60,6 +81,15 @@ function Tarjeta({ data }) {
           </ul>
         )}
         <Boton {...boton} className={styles.botonPrecios} />
+        {precio !== undefined && precio !== null && (
+          <Link href={compraUrl} className={styles.botonStripe}>
+            <span>Comprar con Stripe</span>
+            <svg className={styles.stripeArrow} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </Link>
+        )}
       </div>
     </article>
   );
