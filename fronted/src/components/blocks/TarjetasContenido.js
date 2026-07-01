@@ -67,7 +67,7 @@ export default function TarjetasContenido({ block }) {
                     {Array.isArray(boton) && boton.length > 0 && (
                       <div className={styles.botones}>
                         {boton.map((e, i) => (
-                          <Boton key={e.id || i} {...e} />
+                          <Boton key={e.id || i} {...e} className={styles.botonContenido} />
                         ))}
                       </div>
                     )}

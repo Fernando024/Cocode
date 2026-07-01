@@ -342,6 +342,54 @@
   margin-inline: 0;
 }
 
+.botonContenido {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.4rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.82rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  border: 2px solid var(--clr-pink);
+  background: transparent;
+  color: var(--clr-pink);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.botonContenido::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-pink);
+  transition: left var(--transition-smooth);
+  z-index: -1;
+}
+
+.botonContenido:hover::before {
+  left: 0;
+}
+
+.botonContenido:hover {
+  color: var(--clr-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon-hover);
+}
+
+.botonContenido > * {
+  position: relative;
+  z-index: 1;
+}
+
 .acciones {
   display: flex;
   align-items: center;
@@ -579,6 +627,18 @@
   .starBadge svg {
     width: 12px;
     height: 12px;
+  }
+
+  .botonContenido {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .botonContenido {
+    padding: 0.45rem 1rem;
+    font-size: 0.75rem;
   }
 }
 

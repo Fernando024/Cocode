@@ -160,6 +160,7 @@ const PAGE_POPULATE = {
       "medios-visuales.carrusel": {
         populate: {
           Cartas: { populate: { Imagen: true } },
+          boton: true,
         },
       },
       "medios-visuales.galeria": {
