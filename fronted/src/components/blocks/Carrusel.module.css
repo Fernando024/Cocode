@@ -174,6 +174,60 @@
   transform: scale(1.2);
 }
 
+.botonWrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.botonCarrusel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  border: 2px solid var(--clr-pink);
+  background: transparent;
+  color: var(--clr-pink);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.botonCarrusel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-pink);
+  transition: left var(--transition-smooth);
+  z-index: -1;
+}
+
+.botonCarrusel:hover::before {
+  left: 0;
+}
+
+.botonCarrusel:hover {
+  color: var(--clr-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon-hover);
+}
+
+.botonCarrusel > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .carrusel-wrapper {

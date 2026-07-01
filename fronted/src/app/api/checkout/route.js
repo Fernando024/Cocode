@@ -49,8 +49,9 @@ export async function POST(request) {
     return Response.json({ ok: true, url: session.url });
   } catch (error) {
     console.error("[API checkout] Error:", error);
+    const mensaje = error instanceof Error ? error.message : "Error al procesar el pago.";
     return Response.json(
-      { ok: false, error: "Error al procesar el pago." },
+      { ok: false, error: mensaje },
       { status: 500 }
     );
   }

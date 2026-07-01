@@ -1,17 +1,26 @@
-import styles from "./Boton.module.css";
+import Link from "next/link";
 
-export default function Boton({ texto, url, abrirNuevaPestana, className }) {
+export default function Boton({ texto, url, abrirNuevaPestana, className = "" }) {
   if (!texto || !url) return null;
 
-  const cls = [styles.boton, className].filter(Boolean).join(" ");
+  const isExternal = url.startsWith("http");
+
+  if (isExternal || abrirNuevaPestana) {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {texto}
+      </a>
+    );
+  }
 
   return (
-    <a
-      href={url}
-      className={cls}
-      {...(abrirNuevaPestana ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-    >
-      <span className={styles.texto}>{texto}</span>
-    </a>
+    <Link href={url} className={className}>
+      {texto}
+    </Link>
   );
 }

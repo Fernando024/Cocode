@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import StrapiImage from "@/components/media/StrapiImage";
+import Boton from "@/components/blocks/independientes/Boton";
 import { detectMediaKind } from "@/lib/mediaKind";
 import styles from "./Carrusel.module.css";
 
@@ -22,6 +23,7 @@ export default function Carrusel({ block }) {
             slides={Cartas}
             autoPlay={autoReproductor ?? false}
             interval={velocidad ? Math.max(1000, (11 - velocidad) * 1000) : 3000}
+            boton={b.boton}
           />
         );
       })}
@@ -29,7 +31,7 @@ export default function Carrusel({ block }) {
   );
 }
 
-function CarruselInner({ titulo, slides, autoPlay, interval }) {
+function CarruselInner({ titulo, slides, autoPlay, interval, boton }) {
   const [current, setCurrent] = useState(0);
   const total = slides.length;
   const timerRef = useRef(null);
@@ -128,6 +130,11 @@ function CarruselInner({ titulo, slides, autoPlay, interval }) {
               aria-label={`Ir al slide ${idx + 1}`}
             />
           ))}
+        </div>
+      )}
+      {boton?.texto && (
+        <div className={styles.botonWrapper}>
+          <Boton {...boton} className={styles.botonCarrusel} />
         </div>
       )}
     </section>
